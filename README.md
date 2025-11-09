@@ -32,7 +32,7 @@ crucial for optimizing performance, especially with large datasets or performanc
   - A queue is a data structure that follows the First-In, First-Out (FIFO) principle, where elements are added at one end, known as the rear, and removed from the other end, known as the front.
   - It maintains the order in which elements are added, ensuring that the oldest element is dequeued first.
   - ![Queue Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221213113312/Queue-Data-Structures.png)
-  - ![Circular Queue Image](https://files.codingninjas.in/article_images/advantages-of-circular-queue-over-linear-queue-6-1674054204.webp)
+  - ![Circular Queue Image](https://media.geeksforgeeks.org/wp-content/uploads/20210208122704/cq2.jpeg)
 - `Linked Lists`
   - A linked list is a linear data structure consisting of nodes where each node contains a data element and a reference (or pointer) to the next node in the sequence.
   - Unlike arrays, linked lists do not have a fixed size, and elements can be efficiently inserted or removed from any position within the list.
