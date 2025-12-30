@@ -1,0 +1,110 @@
+class MaxHeap {
+  private heap: number[] = [];
+
+  constructor() {}
+
+  // Get the parent index of a given index
+  private parentIndex(index: number): number {
+    return Math.floor((index - 1) / 2);
+  }
+
+  // Get the left child index of a given index
+  private leftChildIndex(index: number): number {
+    return 2 * index + 1;
+  }
+
+  // Get the right child index of a given index
+  private rightChildIndex(index: number): number {
+    return 2 * index + 2;
+  }
+
+  // Swap two elements in the heap
+  private swap(index1: number, index2: number): void {
+    const temp = this.heap[index1];
+    this.heap[index1] = this.heap[index2];
+    this.heap[index2] = temp;
+  }
+
+  // Bubble up a newly added element to maintain heap property
+  private bubbleUp(index: number): void {
+    let currentIndex = index;
+    while (
+      currentIndex > 0 &&
+      this.heap[currentIndex] > this.heap[this.parentIndex(currentIndex)]
+    ) {
+      this.swap(currentIndex, this.parentIndex(currentIndex));
+      currentIndex = this.parentIndex(currentIndex);
+    }
+  }
+
+  // Insert a new element into the heap
+  insert(value: number): void {
+    this.heap.push(value);
+    this.bubbleUp(this.heap.length - 1);
+  }
+
+  // Bubble down an element to maintain heap property after removal
+  private bubbleDown(index: number): void {
+    let largest = index;
+    const leftIndex = this.leftChildIndex(index);
+    const rightIndex = this.rightChildIndex(index);
+
+    if (
+      leftIndex < this.heap.length &&
+      this.heap[leftIndex] > this.heap[largest]
+    ) {
+      largest = leftIndex;
+    }
+
+    if (
+      rightIndex < this.heap.length &&
+      this.heap[rightIndex] > this.heap[largest]
+    ) {
+      largest = rightIndex;
+    }
+
+    if (largest !== index) {
+      this.swap(index, largest);
+      this.bubbleDown(largest);
+    }
+  }
+
+  // Extract the maximum element from the heap
+  extractMax(): number {
+    if (this.heap.length === 0) {
+      throw new Error("Heap is empty");
+    }
+    const max = this.heap[0];
+    this.heap[0] = this.heap[this.heap.length - 1];
+    this.heap.pop();
+    this.bubbleDown(0);
+    return max;
+  }
+
+  // Get the maximum element from the heap without removing it
+  peek(): number {
+    if (this.heap.length === 0) {
+      throw new Error("Heap is empty");
+    }
+    return this.heap[0];
+  }
+
+  // Check if the heap is empty
+  isEmpty(): boolean {
+    return this.heap.length === 0;
+  }
+}
+
+// Usage Example
+const maxHeap = new MaxHeap();
+maxHeap.insert(10);
+maxHeap.insert(4);
+maxHeap.insert(6);
+maxHeap.insert(3);
+maxHeap.insert(8);
+
+console.log(`Maximum element in the heap: ${maxHeap.peek()}`);
+
+while (!maxHeap.isEmpty()) {
+  console.log(`Extracted max element: ${maxHeap.extractMax()}`);
+}
