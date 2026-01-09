@@ -22,7 +22,13 @@ It provides a standardized method to express how the time or space taken by an a
 Understanding `Big O` helps in choosing efficient algorithms and data structures,
 crucial for optimizing performance, especially with large datasets or performance-critical applications.
 
-## Topics
+## Data Structures
+
+- `Arrays`
+
+  - An array is a collection of items stored at contiguous memory locations.
+  - It allows random access to elements using an index, but insertion and deletion can be costly.
+  - ![Array Image](https://media.geeksforgeeks.org/wp-content/uploads/20220721080317/ArrayDataStructure.png)
 
 - `Stacks`
   - A stack is a collection of elements that allows adding and removing items only from one end, known as the top.
@@ -59,6 +65,9 @@ crucial for optimizing performance, especially with large datasets or performanc
     - In a max-heap, the key of each node is greater than or equal to the keys of its children.
     - The maximum element is at the root, facilitating quick retrieval of the maximum element.
   - ![Min/Max Heap Image](https://www.sahinarslan.tech/static/33612c8f7085780219124e552494212f/e46b2/heap-binary-heap-anatomy.webp)
+
+## Algorithms
+
 - `Greedy`
   - A greedy algorithm decides what to do in each step, only based on the current situation, without a thought of how the total problem looks like.
   - In other words, a greedy algorithm makes the locally optimal choice in each step, hoping to find the global optimum solution in the end.
@@ -77,3 +86,8 @@ crucial for optimizing performance, especially with large datasets or performanc
     - ![Breadth First Search Image](https://cdn.hackr.io/uploads/posts/attachments/41Y3Tl3kaPqGDVBPKFjJ1dYYrA33iss48iMklm7h.png)
   - BFS VS DFS
     - ![BFS VS DFS Image](<https://media.geeksforgeeks.org/wp-content/uploads/20240219134945/bfs-vs-dfs-(1).png>)
+- `Sorting`
+  - Sorting is the process of arranging the elements of a list in a specific order, typically ascending or descending.
+  - Efficient sorting is critical for optimizing other algorithms (like binary search) and data retrieval.
+  - Common algorithms include Bubble Sort, Merge Sort, Quick Sort, and Heap Sort.
+  - ![Sorting Image](https://media.geeksforgeeks.org/wp-content/uploads/20220518113706/SortingAlgorithms.jpg)
